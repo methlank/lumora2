@@ -647,9 +647,10 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
             <div class="ff"><label class="fl">Full name</label><input class="fi" type="text" placeholder="Your name" id="d-name"></div>
             <div class="ff"><label class="fl">Email address</label><input class="fi" type="email" placeholder="your@email.com" id="d-email"></div>
             <div class="ff"><label class="fl">Phone number</label><input class="fi" type="text" placeholder="+94 XX XXX XXXX" id="d-phone"></div>
+            <div class="ff"><label class="fl">Payment receipt (optional — upload after paying)</label><input class="fi" type="file" accept="image/*,.pdf" id="d-receipt" style="padding:8px 14px;cursor:pointer"></div>
           </div>
-          <button class="fsub" onclick="submitDonation()">Confirm Donation &amp; Get Receipt →</button>
-          <p class="fnote">You'll receive a digital receipt immediately. Our team will contact you within 24 hours with payment details.</p>
+          <button class="fsub" onclick="submitDonation()" id="d-btn">Confirm Donation &amp; Get Receipt →</button>
+          <p class="fnote">You'll receive a digital receipt immediately. If you've already made payment, attach your bank receipt above — it goes straight to our team.</p>
         </div>
       </div>
     </div>
@@ -802,6 +803,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
       <div class="rrow"><span class="rl">Donation tier</span><span class="rv" id="r-tier"></span></div>
       <div class="rrow"><span class="rl">Amount pledged</span><span class="rv" id="r-amt"></span></div>
       <div class="rrow"><span class="rl">Date</span><span class="rv" id="r-date"></span></div>
+      <div class="rrow" id="r-receipt-row" style="display:none"><span class="rl">Payment receipt</span><span class="rv" style="color:var(--forest-light)" id="r-receipt-val"></span></div>
       <div class="rref"><div class="rref-l">Reference number</div><div class="rref-n" id="r-ref"></div></div>
       <p class="rnote">Our team will contact you within 24 hours at the email above with payment details. Keep your reference number handy.</p>
       <button class="rcls" onclick="closeRec()">Done</button>
@@ -879,50 +881,113 @@ function setCompanyPkg(pkg){
   document.getElementById('csForm').scrollIntoView({behavior:'smooth',block:'start'});
 }
 
-// DONATION SUBMIT
-function submitDonation(){
+const W3F_KEY = '262d7948-f312-469e-9fbf-8c17f854e6d6';
+
+// DONATION SUBMIT — sends to Web3Forms then shows receipt
+async function submitDonation(){
   const name=document.getElementById('d-name').value.trim();
   const email=document.getElementById('d-email').value.trim();
   const phone=document.getElementById('d-phone').value.trim();
   const amt=document.getElementById('dAmt').value;
+  const receiptFile=document.getElementById('d-receipt').files[0];
   if(!sTier){alert('Please select a donation tier above.');return;}
   if(!name||!email||!phone){alert('Please fill in your name, email and phone number.');return;}
   if(!amt||isNaN(amt)||parseInt(amt)<1){alert('Please enter a valid amount.');return;}
-  const ref='LM2-'+Date.now().toString(36).toUpperCase().slice(-6);
-  const now=new Date();
-  document.getElementById('r-name').textContent=name;
-  document.getElementById('r-email').textContent=email;
-  document.getElementById('r-phone').textContent=phone;
-  document.getElementById('r-tier').textContent=sTier;
-  document.getElementById('r-amt').textContent='LKR '+parseInt(amt).toLocaleString();
-  document.getElementById('r-date').textContent=now.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
-  document.getElementById('r-ref').textContent=ref;
-  document.getElementById('recMo').classList.add('open');
+
+  const btn=document.getElementById('d-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+
+  // Build form data (supports file attachment)
+  const fd=new FormData();
+  fd.append('access_key', W3F_KEY);
+  fd.append('subject', 'Lumora 2 — New Donation: '+sTier+' (LKR '+parseInt(amt).toLocaleString()+')');
+  fd.append('from_name', 'Lumora 2 Donation Form');
+  fd.append('Donor Name', name);
+  fd.append('Email', email);
+  fd.append('Phone', phone);
+  fd.append('Donation Tier', sTier);
+  fd.append('Amount (LKR)', parseInt(amt).toLocaleString());
+  fd.append('Date', new Date().toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'}));
+  if(receiptFile) fd.append('Payment Receipt', receiptFile);
+
+  try {
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+    const data=await res.json();
+    if(data.success){
+      const ref='LM2-'+Date.now().toString(36).toUpperCase().slice(-6);
+      const now=new Date();
+      document.getElementById('r-name').textContent=name;
+      document.getElementById('r-email').textContent=email;
+      document.getElementById('r-phone').textContent=phone;
+      document.getElementById('r-tier').textContent=sTier;
+      document.getElementById('r-amt').textContent='LKR '+parseInt(amt).toLocaleString();
+      document.getElementById('r-date').textContent=now.toLocaleDateString('en-GB',{day:'numeric',month:'long',year:'numeric'});
+      document.getElementById('r-ref').textContent=ref;
+      document.getElementById('r-receipt-row').style.display=receiptFile?'flex':'none';
+      document.getElementById('r-receipt-val').textContent=receiptFile?'✓ Uploaded — '+receiptFile.name:'—';
+      document.getElementById('recMo').classList.add('open');
+    } else {
+      alert('Something went wrong. Please try again or contact us directly.');
+    }
+  } catch(e){
+    alert('Network error. Please check your connection and try again.');
+  }
+  btn.textContent='Confirm Donation & Get Receipt →';btn.disabled=false;
 }
+
 function closeRec(){
   document.getElementById('recMo').classList.remove('open');
   ['d-name','d-email','d-phone'].forEach(id=>document.getElementById(id).value='');
   document.getElementById('dAmt').value='';
+  document.getElementById('d-receipt').value='';
   document.querySelectorAll('.dc').forEach(c=>c.classList.remove('sel'));
   document.getElementById('dTierName').textContent='Choose a tier above ↑';
   document.getElementById('dTierRange').textContent='Select a donation level to continue';
   sTier=null;
 }
 
-// COMPANY SUBMIT
-function submitCS(){
+// COMPANY SUBMIT — sends to Web3Forms
+async function submitCS(){
   const name=document.getElementById('cs-name').value.trim();
   const co=document.getElementById('cs-co').value.trim();
   const email=document.getElementById('cs-email').value.trim();
+  const phone=document.getElementById('cs-phone').value.trim();
   const pkg=document.getElementById('cs-pkg').value;
+  const msg=document.getElementById('cs-msg').value.trim();
   if(!name||!co||!email||!pkg){alert('Please fill in your name, company, email and select a package.');return;}
-  document.getElementById('em-n').textContent=name;
-  document.getElementById('em-pkg').textContent=pkg;
-  document.getElementById('em-e').textContent=email;
+
   const btn=document.getElementById('cs-btn');
-  btn.textContent='✓ Enquiry Sent!';btn.disabled=true;
-  document.getElementById('emMo').classList.add('open');
+  btn.textContent='Sending...';btn.disabled=true;
+
+  const fd=new FormData();
+  fd.append('access_key', W3F_KEY);
+  fd.append('subject', 'Lumora 2 — Company Sponsorship Enquiry: '+pkg);
+  fd.append('from_name', 'Lumora 2 Company Form');
+  fd.append('Contact Person', name);
+  fd.append('Company', co);
+  fd.append('Email', email);
+  fd.append('Phone', phone||'—');
+  fd.append('Package Selected', pkg);
+  fd.append('Message / CSR Requirements', msg||'—');
+
+  try {
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+    const data=await res.json();
+    if(data.success){
+      document.getElementById('em-n').textContent=name;
+      document.getElementById('em-pkg').textContent=pkg;
+      document.getElementById('em-e').textContent=email;
+      document.getElementById('emMo').classList.add('open');
+    } else {
+      alert('Something went wrong. Please try again or email us directly at lumora2@gmail.com');
+      btn.textContent='Send Sponsorship Enquiry →';btn.disabled=false;
+    }
+  } catch(e){
+    alert('Network error. Please check your connection and try again.');
+    btn.textContent='Send Sponsorship Enquiry →';btn.disabled=false;
+  }
 }
+
 function closeEM(){
   document.getElementById('emMo').classList.remove('open');
   ['cs-name','cs-co','cs-email','cs-phone','cs-msg'].forEach(id=>document.getElementById(id).value='');
@@ -931,17 +996,41 @@ function closeEM(){
   btn.textContent='Send Sponsorship Enquiry →';btn.disabled=false;
 }
 
-// CONTACT SUBMIT
-function submitCT(){
+// CONTACT SUBMIT — sends to Web3Forms
+async function submitCT(){
   const name=document.getElementById('ct-name').value.trim();
   const email=document.getElementById('ct-email').value.trim();
   const sub=document.getElementById('ct-sub').value;
   const msg=document.getElementById('ct-msg').value.trim();
   if(!name||!email||!sub||!msg){alert('Please fill in all fields.');return;}
-  document.getElementById('ct-ce').textContent=email;
-  document.getElementById('ctMo').classList.add('open');
-  ['ct-name','ct-email','ct-msg'].forEach(id=>document.getElementById(id).value='');
-  document.getElementById('ct-sub').value='';
+
+  const btn=document.querySelector('#pg-contact .fsub');
+  btn.textContent='Sending...';btn.disabled=true;
+
+  const fd=new FormData();
+  fd.append('access_key', W3F_KEY);
+  fd.append('subject', 'Lumora 2 — Contact: '+sub);
+  fd.append('from_name', 'Lumora 2 Contact Form');
+  fd.append('Name', name);
+  fd.append('Email', email);
+  fd.append('Subject', sub);
+  fd.append('Message', msg);
+
+  try {
+    const res=await fetch('https://api.web3forms.com/submit',{method:'POST',body:fd});
+    const data=await res.json();
+    if(data.success){
+      document.getElementById('ct-ce').textContent=email;
+      document.getElementById('ctMo').classList.add('open');
+      ['ct-name','ct-email','ct-msg'].forEach(id=>document.getElementById(id).value='');
+      document.getElementById('ct-sub').value='';
+    } else {
+      alert('Something went wrong. Please email us directly at lumora2@gmail.com');
+    }
+  } catch(e){
+    alert('Network error. Please check your connection and try again.');
+  }
+  btn.textContent='Send Message →';btn.disabled=false;
 }
 </script>
 </body>
