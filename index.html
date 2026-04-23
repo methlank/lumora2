@@ -3,9 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<
 <title>Lumora 2 — Building Futures</title>
-<link href="https://fonts.googleapis.com/css2?family=DM Sans:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM Sans:wght@300;400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,700;0,9..144,900;1,9..144,300;1,9..144,700&family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,300;1,9..40,400&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -21,7 +20,7 @@ body{font-family:'DM Sans',sans-serif;background:var(--paper);color:var(--ink);o
 .page.active{display:block}
 
 nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;display:flex;align-items:center;justify-content:space-between;background:rgba(245,240,232,0.95);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,0.07);transition:box-shadow 0.3s}
-.nav-logo{font-family:'DM Sans',serif;font-size:1.25rem;font-weight:900;color:var(--ink);cursor:pointer;letter-spacing:-0.3px}
+.nav-logo{font-family:'Fraunces',serif;font-size:1.25rem;font-weight:900;color:var(--ink);cursor:pointer;letter-spacing:-0.3px}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:0;align-items:center}
 .nav-link{font-size:11px;letter-spacing:1.5px;text-transform:uppercase;color:var(--ink-muted);padding:0 0.9rem;height:64px;display:flex;align-items:center;cursor:pointer;transition:color 0.2s;font-weight:500;border:none;background:none;font-family:'DM Sans',sans-serif;position:relative}
@@ -41,7 +40,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .pt{padding-top:64px}
 .wrap{max-width:1100px;margin:0 auto;padding:0 2rem}
 .lbl{font-size:10px;letter-spacing:4px;text-transform:uppercase;color:var(--gold);font-weight:700;margin-bottom:0.8rem}
-.ttl{font-family:'DM Sans',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:1rem}
+.ttl{font-family:'Fraunces',serif;font-size:clamp(2rem,4vw,3.2rem);font-weight:900;color:var(--ink);line-height:1.1;margin-bottom:1rem}
 .ttl em{font-style:italic;font-weight:300;color:var(--forest-light)}
 .bod{font-size:1rem;color:var(--ink-muted);line-height:1.9}
 .reveal{opacity:0;transform:translateY(22px);transition:opacity 0.7s ease,transform 0.7s ease}
@@ -67,19 +66,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .o2{width:450px;height:450px;bottom:-150px;left:100px}
 .h-tag{display:inline-flex;align-items:center;gap:8px;font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-warm);margin-bottom:2rem;opacity:0;animation:ri 0.8s 0.1s ease forwards}
 .h-dot{width:6px;height:6px;border-radius:50%;background:var(--gold-warm)}
-.hero h1{font-family:'DM Sans',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:900;color:#fff;line-height:1.02;max-width:780px;margin-bottom:1.8rem;opacity:0;animation:ri 0.8s 0.2s ease forwards}
+.hero h1{font-family:'Fraunces',serif;font-size:clamp(3.5rem,7vw,6rem);font-weight:900;color:#fff;line-height:1.02;max-width:780px;margin-bottom:1.8rem;opacity:0;animation:ri 0.8s 0.2s ease forwards}
 .hero h1 em{font-style:italic;font-weight:300;color:var(--gold-warm)}
 .h-sub{font-size:1rem;color:rgba(255,255,255,0.5);max-width:480px;line-height:1.9;margin-bottom:2.5rem;opacity:0;animation:ri 0.8s 0.35s ease forwards}
 .h-act{display:flex;gap:1rem;flex-wrap:wrap;opacity:0;animation:ri 0.8s 0.5s ease forwards}
 .h-bar{position:absolute;bottom:0;left:0;right:0;background:rgba(255,255,255,0.04);border-top:1px solid rgba(255,255,255,0.07);display:flex;opacity:0;animation:ri 0.8s 0.7s ease forwards}
 .h-stat{flex:1;padding:1.4rem 2rem;border-right:1px solid rgba(255,255,255,0.07)}
 .h-stat:last-child{border-right:none}
-.h-stat-n{font-family:'DM Sans',serif;font-size:2.2rem;font-weight:900;color:#fff;line-height:1}
+.h-stat-n{font-family:'Fraunces',serif;font-size:2.2rem;font-weight:900;color:#fff;line-height:1}
 .h-stat-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.3);margin-top:4px}
 
 .what-sec{padding:6rem 0;background:var(--white)}
 .wg{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
-.w-quote{font-family:'DM Sans',serif;font-size:1.3rem;font-style:italic;color:var(--forest);line-height:1.6;border-left:3px solid var(--gold);padding-left:1.5rem;margin-bottom:2rem;font-weight:300}
+.w-quote{font-family:'Fraunces',serif;font-size:1.3rem;font-style:italic;color:var(--forest);line-height:1.6;border-left:3px solid var(--gold);padding-left:1.5rem;margin-bottom:2rem;font-weight:300}
 .w-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 .w-card{background:var(--cream);border:1px solid var(--paper-deep);border-radius:14px;padding:1.2rem}
 .w-card-ic{font-size:20px;margin-bottom:8px}
@@ -95,11 +94,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .hcc.c2{background:var(--gold-pale);color:var(--ink)}
 .hcc.c3{background:var(--ink);color:#fff}
 .hcc-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;opacity:0.5;margin-bottom:1.2rem;font-weight:700}
-.hcc-t{font-family:'DM Sans',serif;font-size:1.6rem;font-weight:900;line-height:1.2;margin-bottom:0.8rem}
+.hcc-t{font-family:'Fraunces',serif;font-size:1.6rem;font-weight:900;line-height:1.2;margin-bottom:0.8rem}
 .hcc-b{font-size:13px;line-height:1.7;opacity:0.65;margin-bottom:1.5rem}
 .hcc-arr{font-size:20px;opacity:0.5;transition:opacity 0.2s,transform 0.2s}
 .hcc:hover .hcc-arr{opacity:1;transform:translateX(4px)}
-.hcc-bg{font-family:'DM Sans',serif;font-size:8rem;font-weight:900;opacity:0.05;position:absolute;bottom:-1rem;right:1rem;line-height:1;user-select:none}
+.hcc-bg{font-family:'Fraunces',serif;font-size:8rem;font-weight:900;opacity:0.05;position:absolute;bottom:-1rem;right:1rem;line-height:1;user-select:none}
 
 /* WHY PARTNER */
 .wp-h{padding:5rem 0 4rem;background:var(--ink)}
@@ -129,14 +128,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .pl.p4{background:var(--paper-deep);color:var(--ink)}
 .pl.p5{background:var(--forest-light);color:#fff}
 .pl.p6{background:var(--white);color:var(--ink);border:1px solid var(--paper-deep)}
-.pl-bg{font-family:'DM Sans',serif;font-size:6rem;font-weight:900;opacity:0.08;position:absolute;bottom:-1rem;right:0.5rem;line-height:1;user-select:none}
+.pl-bg{font-family:'Fraunces',serif;font-size:6rem;font-weight:900;opacity:0.08;position:absolute;bottom:-1rem;right:0.5rem;line-height:1;user-select:none}
 .pl-ic{font-size:1.8rem;margin-bottom:0.8rem}
 .pl-t{font-size:1rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
 .pl-b{font-size:12px;line-height:1.7;opacity:0.7}
 .pl-hl{font-size:11px;font-weight:700;margin-top:0.8rem;opacity:0.9;letter-spacing:0.3px}
 
 .wp-bar{padding:4rem 0;background:var(--forest);text-align:center}
-.wp-bar h3{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:0.5rem;line-height:1.4}
+.wp-bar h3{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:700;color:#fff;margin-bottom:0.5rem;line-height:1.4}
 .wp-bar p{color:rgba(255,255,255,0.4);font-size:13px;margin-bottom:2rem}
 
 /* COMPANY */
@@ -162,7 +161,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .tc-b.go{color:var(--gold)}
 .tc-b.si{color:var(--ink-muted)}
 .tc-b.br{color:#8B4A2A}
-.tc-h{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:var(--ink);line-height:1}
+.tc-h{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--ink);line-height:1}
 .tc-s{font-size:11px;color:var(--ink-muted);margin-top:3px}
 
 .tc-body{padding:1rem 1.2rem 0.5rem;border-top:1px solid var(--paper-deep);flex:1}
@@ -203,7 +202,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .dc:hover{border-color:var(--forest-light);transform:translateY(-3px)}
 .dc.sel{border-color:var(--forest);background:var(--forest);color:#fff}
 .dc-ic{font-size:1.8rem;margin-bottom:0.6rem}
-.dc-n{font-family:'DM Sans',serif;font-size:1rem;font-weight:700;margin-bottom:0.3rem}
+.dc-n{font-family:'Fraunces',serif;font-size:1rem;font-weight:700;margin-bottom:0.3rem}
 .dc-r{font-size:11px;opacity:0.65;line-height:1.4}
 .dc-d{font-size:11px;margin-top:8px;line-height:1.5;opacity:0.7}
 
@@ -211,11 +210,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .df-wrap{display:grid;grid-template-columns:1fr 1fr;gap:3rem;align-items:start;max-width:900px}
 .std{background:var(--forest);border-radius:16px;padding:2rem;color:#fff;margin-bottom:1.2rem}
 .std-lbl{font-size:9px;letter-spacing:3px;text-transform:uppercase;opacity:0.5;margin-bottom:0.3rem}
-.std-t{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:#fff}
+.std-t{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:#fff}
 .std-r{font-size:13px;color:rgba(255,255,255,0.55);margin-top:2px}
 .ai-wrap{position:relative;margin-bottom:14px}
-.ai-pfx{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:'DM Sans',serif;font-size:1.1rem;color:var(--ink-muted);pointer-events:none}
-.ai{width:100%;padding:14px 14px 14px 60px;border:1.5px solid var(--paper-deep);border-radius:10px;font-family:'DM Sans',serif;font-size:1.3rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color 0.2s}
+.ai-pfx{position:absolute;left:14px;top:50%;transform:translateY(-50%);font-family:'Fraunces',serif;font-size:1.1rem;color:var(--ink-muted);pointer-events:none}
+.ai{width:100%;padding:14px 14px 14px 60px;border:1.5px solid var(--paper-deep);border-radius:10px;font-family:'Fraunces',serif;font-size:1.3rem;color:var(--ink);background:var(--cream);outline:none;transition:border-color 0.2s}
 .ai:focus{border-color:var(--forest)}
 
 /* RECEIPT */
@@ -224,7 +223,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .rb{background:var(--white);border-radius:24px;max-width:460px;width:100%;overflow:hidden;animation:fi 0.3s ease}
 .rh{background:var(--forest);padding:2rem;text-align:center}
 .rchk{width:52px;height:52px;border-radius:50%;background:rgba(255,255,255,0.15);display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;font-size:22px}
-.rt{font-family:'DM Sans',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:0.3rem}
+.rt{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:0.3rem}
 .rs{font-size:13px;color:rgba(255,255,255,0.55)}
 .rbody{padding:1.8rem}
 .rrow{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid var(--paper-deep);font-size:13px}
@@ -233,7 +232,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .rv{font-weight:700;color:var(--ink);text-align:right}
 .rref{background:var(--paper-warm);border-radius:10px;padding:1rem;margin:1rem 0;text-align:center}
 .rref-l{font-size:10px;letter-spacing:2px;text-transform:uppercase;color:var(--ink-muted);margin-bottom:4px}
-.rref-n{font-family:'DM Sans',serif;font-size:1.3rem;font-weight:900;color:var(--forest);letter-spacing:2px}
+.rref-n{font-family:'Fraunces',serif;font-size:1.3rem;font-weight:900;color:var(--forest);letter-spacing:2px}
 .rnote{font-size:12px;color:var(--ink-muted);line-height:1.6;text-align:center;margin-bottom:1.5rem}
 .rcls{display:block;width:100%;padding:13px;background:var(--forest);color:#fff;border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
 .rcls:hover{background:var(--forest-mid)}
@@ -243,7 +242,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .em-box{background:var(--white);border-radius:24px;max-width:420px;width:100%;overflow:hidden;animation:fi 0.3s ease}
 .em-h{background:var(--ink);padding:2.5rem;text-align:center}
 .em-ic{font-size:3rem;margin-bottom:1rem}
-.em-t{font-family:'DM Sans',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:0.3rem}
+.em-t{font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:0.3rem}
 .em-s{font-size:13px;color:rgba(255,255,255,0.45)}
 .em-body{padding:2rem;text-align:center}
 .em-txt{font-size:14px;color:var(--ink-muted);line-height:1.8;margin-bottom:1.5rem}
@@ -256,21 +255,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .l1g{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .l1-vis{background:var(--forest);border-radius:24px;padding:3rem;color:#fff;position:relative;overflow:hidden}
 .l1-vp{position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:18px 18px}
-.l1-q{font-family:'DM Sans',serif;font-size:1.3rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;position:relative;z-index:1}
-.l1-q::before{content:'"';font-size:4rem;color:var(--gold-warm);opacity:0.35;position:absolute;top:-1.5rem;left:-0.5rem;font-family:'DM Sans',serif;line-height:1}
+.l1-q{font-family:'Fraunces',serif;font-size:1.3rem;font-style:italic;line-height:1.6;color:rgba(255,255,255,0.85);margin-bottom:1.5rem;position:relative;z-index:1}
+.l1-q::before{content:'"';font-size:4rem;color:var(--gold-warm);opacity:0.35;position:absolute;top:-1.5rem;left:-0.5rem;font-family:'Fraunces',serif;line-height:1}
 .l1-a{font-size:12px;color:rgba(255,255,255,0.4);letter-spacing:1px;position:relative;z-index:1}
 .l1-fl{position:absolute;bottom:-10px;right:-10px;background:var(--gold);border-radius:14px;padding:1rem 1.3rem;text-align:center;z-index:2}
-.l1-fln{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:#fff;line-height:1}
+.l1-fln{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:#fff;line-height:1}
 .l1-fll{font-size:10px;color:rgba(255,255,255,0.8);margin-top:2px}
 .l1-imp{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:2rem}
 .l1-st{background:var(--cream);border:1px solid var(--paper-deep);border-radius:12px;padding:1rem}
-.l1-stn{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:var(--forest);line-height:1}
+.l1-stn{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--forest);line-height:1}
 .l1-stl{font-size:11px;color:var(--ink-muted);margin-top:3px;line-height:1.4}
 
 .tl-sec{padding:5rem 0;background:var(--paper-warm)}
 .tlg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
 .tlc{background:var(--white);border-radius:16px;padding:1.5rem;border:1px solid var(--paper-deep)}
-.tlc-y{font-family:'DM Sans',serif;font-size:2rem;font-weight:900;color:var(--paper-deep);line-height:1;margin-bottom:0.5rem}
+.tlc-y{font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--paper-deep);line-height:1;margin-bottom:0.5rem}
 .tlc-t{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:0.5rem}
 .tlc-b{font-size:12px;color:var(--ink-muted);line-height:1.7}
 .tlc.cur{border-color:var(--forest);background:var(--forest)}
@@ -298,7 +297,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 /* FOOTER */
 .foot{background:var(--ink);padding:4rem 0 2rem}
 .footg{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
-.foot-bn{font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:0.5rem}
+.foot-bn{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:#fff;margin-bottom:0.5rem}
 .foot-bn span{color:var(--gold)}
 .foot-bb{font-size:13px;color:rgba(255,255,255,0.3);line-height:1.8;max-width:260px;margin-top:0.5rem}
 .foot-ct{font-size:10px;letter-spacing:2.5px;text-transform:uppercase;color:rgba(255,255,255,0.3);font-weight:700;margin-bottom:1rem}
@@ -365,7 +364,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 <body>
 
 <nav id="nav">
-  <div class="nav-logo" onclick="go('home')" style="display:flex;align-items:center;gap:8px"><img src="data:image/jpeg;base64,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" style="height:36px;width:36px;border-radius:50%;object-fit:cover"> Lumora <span>2</span></div>
+  <div class="nav-logo" onclick="go('home')" style="display:flex;align-items:center;gap:8px"><img src="data:image/jpeg;base64,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" style="height:36px;width:36px;border-radius:50%;object-fit:cover"> Lumora <span>2</span></div>
   <div class="nav-links">
     <button class="nav-link" onclick="go('home')" data-p="home">Home</button>
     <button class="nav-link" onclick="go('why')" data-p="why">Why Partner</button>
@@ -429,7 +428,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
       </div>
       <div class="reveal" style="margin-top:4rem">
         <p class="lbl">Lumora 2 — The Schools</p>
-        <h3 style="font-family:'DM Sans',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:0.5rem">Where your support <em style="font-weight:300;color:var(--forest-light)">goes.</em></h3>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:0.5rem">Where your support <em style="font-weight:300;color:var(--forest-light)">goes.</em></h3>
         <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/7;margin-bottom:12px">
           <img referrerpolicy="no-referrer" crossorigin="anonymous" src="https://i.ibb.co/qFFN8n4Y/IMG-8392.avif" style="width:100%;height:100%;object-fit:cover" alt="Lumora 2">
         </div>
@@ -463,7 +462,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
   <section class="wp-h">
     <div class="wrap reveal">
       <p class="lbl">The Case For Partnership</p>
-      <h2 class="ttl">Why partner with us instead of <em>doing it alone?</em></h2>
+      <h2 class="ttl">Why partner with us instead of <em>going it alone?</em></h2>
       <p style="color:rgba(255,255,255,0.4);font-size:1rem;line-height:1.9;max-width:560px;margin-top:0.5rem">Companies can run CSR independently. Most end up spending more, reaching less, and struggling to prove real impact. Here is the honest comparison.</p>
     </div>
   </section>
@@ -637,12 +636,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
           </div>
           <div class="ff full"><label class="fl">CSR requirements or message (optional)</label><textarea class="fta" rows="3" placeholder="Tell us about your CSR goals or any specific requirements..." id="cs-msg"></textarea></div>
         </div>
-        </div><!-- end cs-form-fields -->
+        </div>
         <button class="fsub" onclick="submitCS()" id="cs-btn">Send Sponsorship Enquiry →</button>
         <p class="fnote" id="cs-note">Submitting this form sends your enquiry directly to lumorabyieeepes@gmail.com. We'll respond within 24 hours.</p>
         <div id="cs-ty" style="display:none;text-align:center;padding:1.5rem 0">
           <div style="font-size:2.5rem;margin-bottom:10px">🎉</div>
-          <div style="font-family:'DM Sans',serif;font-size:1.4rem;font-weight:900;color:var(--forest);margin-bottom:8px">Enquiry Sent!</div>
+          <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--forest);margin-bottom:8px">Enquiry Sent!</div>
           <div style="font-size:13px;color:var(--ink-muted);line-height:1.8">Thank you! Our team will reach out within 24 hours to discuss your sponsorship package.</div>
         </div>
       </div>
@@ -667,18 +666,56 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="reveal">
           <p class="lbl">Financial Contributions</p>
           <h2 class="ttl" style="font-size:2rem">How to <em>transfer?</em></h2>
-          <p class="bod" style="margin-bottom:2rem">Accepted via electronic bank transfer or direct cash. Transfer to the account below, then fill in the form and attach your receipt so we can confirm.</p>
-          <div style="background:var(--forest);border-radius:20px;padding:2rem;color:#fff;margin-bottom:1.5rem">
-            <p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-warm);margin-bottom:1.2rem;font-weight:700">Bank Account Details</p>
-            <div style="display:flex;flex-direction:column;gap:10px">
-              <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);font-size:13px"><span style="color:rgba(255,255,255,0.45)">Account Name</span><span style="color:#fff;font-weight:600;text-align:right">IEEE Student Branch SLIIT</span></div>
-              <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);font-size:13px"><span style="color:rgba(255,255,255,0.45)">Account Number</span><span style="color:var(--gold-warm);font-weight:700;font-size:15px;font-family:'DM Sans',serif">103960870292</span></div>
-              <div style="display:flex;justify-content:space-between;padding-bottom:10px;border-bottom:1px solid rgba(255,255,255,0.08);font-size:13px"><span style="color:rgba(255,255,255,0.45)">Bank</span><span style="color:#fff;font-weight:600">Sampath Bank</span></div>
-              <div style="display:flex;justify-content:space-between;font-size:13px"><span style="color:rgba(255,255,255,0.45)">Branch</span><span style="color:#fff;font-weight:600">Malabe Branch</span></div>
+          <p class="bod" style="margin-bottom:2rem">Enter your email below and we'll send you our bank details directly. Once you've transferred, just reply to that email with your receipt and we'll confirm your donation.</p>
+
+          <!-- Step indicators -->
+          <div style="display:flex;flex-direction:column;gap:10px;margin-bottom:2rem">
+            <div style="display:flex;align-items:flex-start;gap:14px">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--forest);color:#fff;font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">1</div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px">Enter your email</div>
+                <div style="font-size:12px;color:var(--ink-muted);line-height:1.6">We'll send you the bank account details privately.</div>
+              </div>
+            </div>
+            <div style="width:1px;height:16px;background:var(--paper-deep);margin-left:13px"></div>
+            <div style="display:flex;align-items:flex-start;gap:14px">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--paper-deep);color:var(--ink-muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">2</div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:2px">Make the transfer</div>
+                <div style="font-size:12px;color:var(--ink-muted);line-height:1.6">Transfer your chosen amount via bank or cash.</div>
+              </div>
+            </div>
+            <div style="width:1px;height:16px;background:var(--paper-deep);margin-left:13px"></div>
+            <div style="display:flex;align-items:flex-start;gap:14px">
+              <div style="width:28px;height:28px;border-radius:50%;background:var(--paper-deep);color:var(--ink-muted);font-size:12px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0">3</div>
+              <div>
+                <div style="font-size:13px;font-weight:700;color:var(--ink-muted);margin-bottom:2px">Send us your receipt</div>
+                <div style="font-size:12px;color:var(--ink-muted);line-height:1.6">Reply to our email with a screenshot or photo of the transfer slip.</div>
+              </div>
             </div>
           </div>
-          <div style="background:var(--gold-pale);border-radius:14px;padding:1rem 1.3rem;border-left:3px solid var(--gold)">
-            <p style="font-size:12px;color:var(--ink);line-height:1.7"><strong>Important:</strong> Please mention <strong>"Lumora"</strong> as the beneficiary's name in the bank transaction reference.</p>
+
+          <!-- Email request form -->
+          <div id="bdForm" style="background:var(--forest);border-radius:20px;padding:2rem;color:#fff">
+            <p style="font-size:10px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-warm);margin-bottom:0.4rem;font-weight:700">Get bank details via email</p>
+            <p style="font-size:13px;color:rgba(255,255,255,0.5);margin-bottom:1.4rem;line-height:1.6">We'll send the account details to you within a few hours.</p>
+            <div id="bd-fields" style="display:flex;flex-direction:column;gap:10px">
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <label style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:700">Your name</label>
+                <input id="bd-name" type="text" placeholder="Full name" style="padding:12px 14px;border:1.5px solid rgba(255,255,255,0.15);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:#fff;background:rgba(255,255,255,0.08);outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" >
+              </div>
+              <div style="display:flex;flex-direction:column;gap:5px">
+                <label style="font-size:9px;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,0.45);font-weight:700">Your email address</label>
+                <input id="bd-email" type="email" placeholder="you@email.com" style="padding:12px 14px;border:1.5px solid rgba(255,255,255,0.15);border-radius:10px;font-family:'DM Sans',sans-serif;font-size:14px;color:#fff;background:rgba(255,255,255,0.08);outline:none;transition:border-color 0.2s" onfocus="this.style.borderColor='rgba(255,255,255,0.5)'" onblur="this.style.borderColor='rgba(255,255,255,0.15)'" >
+              </div>
+              <button id="bd-btn" onclick="submitBD()" style="width:100%;padding:14px;background:var(--gold);color:var(--ink);border:none;border-radius:10px;font-family:'DM Sans',sans-serif;font-size:13px;font-weight:700;letter-spacing:1px;text-transform:uppercase;cursor:pointer;transition:background 0.2s;margin-top:4px">Send Me the Bank Details →</button>
+            </div>
+            <!-- success state -->
+            <div id="bd-ty" style="display:none;text-align:center;padding:1rem 0">
+              <div style="font-size:2rem;margin-bottom:8px">✉️</div>
+              <div style="font-family:'Fraunces',serif;font-size:1.2rem;font-weight:900;color:#fff;margin-bottom:6px">On its way!</div>
+              <div style="font-size:13px;color:rgba(255,255,255,0.6);line-height:1.7">We've received your request and will email you the bank details shortly. Check your inbox in a few hours.</div>
+            </div>
           </div>
         </div>
         <div class="reveal d1">
@@ -790,9 +827,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
       </div>
       <div class="reveal" style="margin-top:4rem">
         <p class="lbl">Lumora 1 — In Photos</p>
-        <h3 style="font-family:'DM Sans',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:0.5rem">Moments from <em style="font-weight:300;color:var(--forest-light)">the first build.</em></h3>
+        <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:0.5rem">Moments from <em style="font-weight:300;color:var(--forest-light)">the first build.</em></h3>
         <p style="font-size:13px;color:var(--ink-muted);margin-bottom:1rem">Replace the placeholder slots below with your actual photos. See instructions below each slot.</p>
-        <!-- Row of 3 -->
         <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px">
           <div style="border-radius:14px;overflow:hidden;aspect-ratio:3/4;position:relative">
             <img referrerpolicy="no-referrer" src="https://i.ibb.co/ynsRjM7q/IMG-9496.avif" style="width:100%;height:100%;object-fit:cover" alt="Kids with stationery packs">
@@ -807,7 +843,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);padding:10px 12px;color:#fff;font-size:11px;font-weight:600">Getting ration packs ready</div>
           </div>
         </div>
-        <!-- Row of 2 -->
         <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-bottom:12px">
           <div style="border-radius:14px;overflow:hidden;aspect-ratio:4/3;position:relative">
             <img referrerpolicy="no-referrer" src="https://i.ibb.co/CK224SQf/IMG-E9481.avif" style="width:100%;height:100%;object-fit:cover" alt="Ration pack distribution">
@@ -818,7 +853,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
             <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);padding:10px 12px;color:#fff;font-size:11px;font-weight:600">Families receiving support</div>
           </div>
         </div>
-        <!-- Wide bottom -->
         <div style="border-radius:16px;overflow:hidden;aspect-ratio:16/6;position:relative">
           <img referrerpolicy="no-referrer" src="https://i.ibb.co/DsM9WsX/lumora-1.png" style="width:100%;height:100%;object-fit:cover" alt="Clean water system">
           <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top,rgba(0,0,0,0.6),transparent);padding:12px 16px;color:#fff;font-size:12px;font-weight:600">Clean water system — Lumora 1</div>
@@ -889,7 +923,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         </div>
         <div class="ct-fb reveal d1">
           <p class="lbl">Send a Message</p>
-          <h3 style="font-family:'DM Sans',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:1.5rem">How can we <em style="font-weight:300;color:var(--forest-light)">help?</em></h3>
+          <h3 style="font-family:'Fraunces',serif;font-size:1.5rem;font-weight:900;color:var(--ink);margin-bottom:1.5rem">How can we <em style="font-weight:300;color:var(--forest-light)">help?</em></h3>
           <div style="display:flex;flex-direction:column;gap:12px">
             <div class="fg" style="margin-bottom:0">
               <div class="ff"><label class="fl">Name</label><input class="fi" type="text" placeholder="Your name" id="ct-name"></div>
@@ -909,7 +943,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
             <button class="fsub" onclick="submitCT()" id="ct-btn">Send Message →</button>
             <div id="ct-ty" style="display:none;background:var(--forest);border-radius:14px;padding:1.8rem;text-align:center;margin-top:1rem">
               <div style="font-size:2.5rem;margin-bottom:10px">✓</div>
-              <div style="font-family:'DM Sans',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:8px">Message Sent!</div>
+              <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:#fff;margin-bottom:8px">Message Sent!</div>
               <div style="font-size:13px;color:rgba(255,255,255,0.65);line-height:1.8">Thanks for reaching out.<br>We'll get back to you within 24 hours.</div>
             </div>
           </div>
@@ -944,19 +978,19 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="reveal d1">
           <div style="display:grid;grid-template-columns:1fr 1fr;gap:12px">
             <div style="background:var(--forest);border-radius:16px;padding:1.5rem;color:#fff;text-align:center">
-              <div style="font-family:'DM Sans',serif;font-size:2.5rem;font-weight:900;color:#fff;line-height:1">400K+</div>
+              <div style="font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:#fff;line-height:1">400K+</div>
               <div style="font-size:11px;color:rgba(255,255,255,0.5);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Members worldwide</div>
             </div>
             <div style="background:var(--gold-pale);border-radius:16px;padding:1.5rem;color:var(--ink);text-align:center">
-              <div style="font-family:'DM Sans',serif;font-size:2.5rem;font-weight:900;color:var(--ink);line-height:1">160+</div>
+              <div style="font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:var(--ink);line-height:1">160+</div>
               <div style="font-size:11px;color:var(--ink-muted);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Countries</div>
             </div>
             <div style="background:var(--paper-warm);border-radius:16px;padding:1.5rem;color:var(--ink);text-align:center">
-              <div style="font-family:'DM Sans',serif;font-size:2.5rem;font-weight:900;color:var(--forest);line-height:1">1884</div>
+              <div style="font-family:'Fraunces',serif;font-size:2.5rem;font-weight:900;color:var(--forest);line-height:1">1884</div>
               <div style="font-size:11px;color:var(--ink-muted);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Founded</div>
             </div>
             <div style="background:var(--ink);border-radius:16px;padding:1.5rem;color:#fff;text-align:center">
-              <div style="font-family:'DM Sans',serif;font-size:2rem;font-weight:900;color:var(--gold-warm);line-height:1">#1</div>
+              <div style="font-family:'Fraunces',serif;font-size:2rem;font-weight:900;color:var(--gold-warm);line-height:1">#1</div>
               <div style="font-size:11px;color:rgba(255,255,255,0.45);margin-top:4px;letter-spacing:1px;text-transform:uppercase">Tech &amp; Engineering org</div>
             </div>
           </div>
@@ -972,7 +1006,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="reveal">
           <div style="background:var(--forest);border-radius:20px;padding:2.5rem;color:#fff;position:relative;overflow:hidden">
             <div style="position:absolute;inset:0;opacity:0.04;background-image:radial-gradient(circle,#fff 1px,transparent 1px);background-size:18px 18px"></div>
-            <p style="font-family:'DM Sans',serif;font-size:1.3rem;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.6;position:relative;z-index:1;margin-bottom:1rem">"PES actively contributes to a clean and affordable energy future through education, research, and advocacy."</p>
+            <p style="font-family:'Fraunces',serif;font-size:1.3rem;font-style:italic;color:rgba(255,255,255,0.85);line-height:1.6;position:relative;z-index:1;margin-bottom:1rem">"PES actively contributes to a clean and affordable energy future through education, research, and advocacy."</p>
             <p style="font-size:11px;color:rgba(255,255,255,0.35);letter-spacing:1px;position:relative;z-index:1">— IEEE Power &amp; Energy Society</p>
           </div>
         </div>
@@ -1003,8 +1037,8 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         </div>
         <div class="reveal d1">
           <div style="background:var(--cream);border:1px solid var(--paper-deep);border-radius:20px;padding:2.5rem;text-align:center">
-            <img src="data:image/jpeg;base64,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" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1.5rem;display:block;border:3px solid var(--gold-pale)">
-            <div style="font-family:'DM Sans',serif;font-size:1.8rem;font-weight:900;color:var(--ink);margin-bottom:0.3rem">Lumora <span style="color:var(--gold)">2</span></div>
+            <img src="data:image/jpeg;base64,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" style="width:120px;height:120px;border-radius:50%;object-fit:cover;margin:0 auto 1.5rem;display:block;border:3px solid var(--gold-pale)">
+            <div style="font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--ink);margin-bottom:0.3rem">Lumora <span style="color:var(--gold)">2</span></div>
             <div style="font-size:13px;color:var(--ink-muted);margin-bottom:1.5rem">Sharing Love &amp; New Beginnings</div>
             <div style="height:1px;background:var(--paper-deep);margin-bottom:1.5rem"></div>
             <div style="font-size:12px;color:var(--ink-muted);line-height:1.8">
@@ -1021,7 +1055,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
   <section style="padding:4rem 0;background:var(--forest);text-align:center">
     <div class="wrap">
       <p class="lbl" style="color:var(--gold-warm)">Ready to support?</p>
-      <h3 style="font-family:'DM Sans',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:0.5rem">Join us in building something <em style="font-weight:300;color:var(--gold-warm)">lasting.</em></h3>
+      <h3 style="font-family:'Fraunces',serif;font-size:2rem;font-weight:700;color:#fff;margin-bottom:0.5rem">Join us in building something <em style="font-weight:300;color:var(--gold-warm)">lasting.</em></h3>
       <p style="color:rgba(255,255,255,0.4);font-size:14px;margin-bottom:2rem">Every contribution — financial or in-kind — goes directly to the schools.</p>
       <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
         <button class="btn-g" onclick="go('company')">Become a Company Sponsor</button>
@@ -1030,6 +1064,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
     </div>
   </section>
 </div>
+
 <!-- FOOTER -->
 <footer class="foot">
   <div class="wrap">
@@ -1056,8 +1091,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="foot-lk" style="cursor:default">lumorabyieeepes@gmail.com</div>
         <div class="foot-lk" style="cursor:default">+94 70 641 3758</div>
         <div class="foot-lk" style="cursor:default">+94 71 459 1657</div>
-        
-        
       </div>
     </div>
     <div class="foot-bot">
@@ -1165,22 +1198,17 @@ const GFORM='https://forms.gle/gEQBMKtbma7Mpt339';
 
 // SHOW THANK YOU
 function showThanks(type, ref){
-  // Hide form fields
   const formEl=document.getElementById(type+'-form-fields');
   if(formEl) formEl.style.display='none';
-  // Hide submit button
   const btnId = type==='cs'?'cs-btn': type==='d'?'d-btn':'ct-btn';
   const btnEl=document.getElementById(btnId);
   if(btnEl) btnEl.style.display='none';
-  // Hide note
   const note=document.getElementById(type+'-note');
   if(note) note.style.display='none';
-  // Set reference number
   if(ref){
     const r=document.getElementById(type+'-ref');
     if(r) r.textContent=ref;
   }
-  // Show thank you block
   const ty=document.getElementById(type+'-ty');
   if(ty){
     ty.style.display='block';
@@ -1232,7 +1260,6 @@ async function submitDonation(){
       alert('Something went wrong. Please try again or contact lumorabyieeepes@gmail.com');
     }
   }catch(e){
-    // Show thank you anyway — form data was likely sent
     showThanks('d', ref);
   }
 }
@@ -1277,6 +1304,34 @@ async function submitCS(){
   }
 }
 
+// BANK DETAILS REQUEST
+async function submitBD(){
+  const name=document.getElementById('bd-name').value.trim();
+  const email=document.getElementById('bd-email').value.trim();
+  if(!name||!email){alert('Please enter your name and email.');return;}
+  const btn=document.getElementById('bd-btn');
+  btn.textContent='Sending...';btn.disabled=true;
+  const payload={
+    access_key:W3F_KEY,
+    subject:'Lumora 2 — Bank Details Request from '+name,
+    from_name:'Lumora 2 Website',
+    botcheck:'',
+    'Name':name,
+    'Email':email,
+    'Request':'Please send bank transfer details to this person so they can make a donation.',
+    'Note':'Reply to '+email+' with the bank account details.'
+  };
+  try{
+    await fetch('https://api.web3forms.com/submit',{
+      method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body:JSON.stringify(payload)
+    });
+  }catch(e){}
+  document.getElementById('bd-fields').style.display='none';
+  document.getElementById('bd-ty').style.display='block';
+  btn.style.display='none';
+}
+
 // CONTACT SUBMIT
 async function submitCT(){
   const name=document.getElementById('ct-name').value.trim();
@@ -1305,7 +1360,6 @@ async function submitCT(){
   }catch(e){}
   showThanks('ct', null);
 }
-
 </script>
 
 <script async src="https://tally.so/widgets/embed.js"></script>
