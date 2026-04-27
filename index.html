@@ -80,7 +80,6 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .wg{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
 .w-quote{font-family:'Fraunces',serif;font-size:1.3rem;font-style:italic;color:var(--forest);line-height:1.6;border-left:3px solid var(--gold);padding-left:1.5rem;margin-bottom:2rem;font-weight:300}
 .w-cards{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.w-card{background:var(--cream);border:1px solid var(--paper-deep);border-radius:14px;padding:1.2rem}
 .w-card-ic{font-size:20px;margin-bottom:8px}
 .w-card-t{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .w-card-b{font-size:11px;color:var(--ink-muted);line-height:1.6}
@@ -129,7 +128,21 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 .pl.p5{background:var(--forest-light);color:#fff}
 .pl.p6{background:var(--white);color:var(--ink);border:1px solid var(--paper-deep)}
 .pl-bg{font-family:'Fraunces',serif;font-size:6rem;font-weight:900;opacity:0.08;position:absolute;bottom:-1rem;right:0.5rem;line-height:1;user-select:none}
-.pl-ic{font-size:1.8rem;margin-bottom:0.8rem}
+.pl-img{position:absolute;bottom:0;right:0;width:140px;height:140px;opacity:0.13;pointer-events:none;transition:opacity 0.3s}
+.pl:hover .pl-img{opacity:0.2}
+.pl-ic{font-size:1.8rem;margin-bottom:0.8rem;position:relative;z-index:1}
+.pl-t,.pl-b,.pl-hl,.pl-bg{position:relative;z-index:1}
+
+/* w-card image backgrounds */
+.w-card{background:var(--cream);border:1px solid var(--paper-deep);border-radius:14px;padding:1.2rem;position:relative;overflow:hidden}
+.w-card-img{position:absolute;bottom:0;right:0;width:90px;height:90px;opacity:0.1;pointer-events:none;transition:opacity 0.3s}
+.w-card:hover .w-card-img{opacity:0.18}
+.w-card-ic,.w-card-t,.w-card-b,.w-card-tg{position:relative;z-index:1}
+
+/* hcc image backgrounds */
+.hcc-img{position:absolute;bottom:-10px;right:-10px;width:160px;height:160px;opacity:0.08;pointer-events:none;transition:opacity 0.3s}
+.hcc:hover .hcc-img{opacity:0.14}
+.hcc-lbl,.hcc-t,.hcc-b,.hcc-arr,.hcc-bg{position:relative;z-index:1}
 .pl-t{font-size:1rem;font-weight:700;margin-bottom:0.5rem;line-height:1.3}
 .pl-b{font-size:12px;line-height:1.7;opacity:0.7}
 .pl-hl{font-size:11px;font-weight:700;margin-top:0.8rem;opacity:0.9;letter-spacing:0.3px}
@@ -153,14 +166,17 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
 
 .ts{padding:5rem 0;background:var(--white)}
 .tg{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:2.5rem}.tc{background:var(--cream);border:1px solid var(--paper-deep);border-radius:18px;overflow:hidden;transition:transform 0.2s,box-shadow 0.2s;position:relative;display:flex;flex-direction:column}
-.tc:hover{transform:translateY(-5px);box-shadow:0 16px 40px rgba(0,0,0,0.09)}
-.tc.ft{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}.tc.chosen{border-color:var(--gold);box-shadow:0 0 0 2px var(--gold);transform:translateY(-5px)}
+.tc:hover{transform:scale(1.03);box-shadow:0 16px 40px rgba(0,0,0,0.09);border-color:var(--gold);border-width:2px}
+.tc.ft{border-color:var(--gold);box-shadow:0 0 0 1px var(--gold)}.tc.chosen{border-color:var(--gold);border-width:2px;box-shadow:0 0 0 2px var(--gold),0 20px 50px rgba(184,136,42,0.18);transform:scale(1.04)}
 .tc-top{padding:1.4rem 1.2rem 1.1rem}
 .tc-b{font-size:9px;letter-spacing:2.5px;text-transform:uppercase;font-weight:700;margin-bottom:0.8rem}
 .tc-b.pt{color:#7F77DD}
 .tc-b.go{color:var(--gold)}
 .tc-b.si{color:var(--ink-muted)}
 .tc-b.br{color:#8B4A2A}
+.tc-b.sp{color:#2A7A8B}
+.tc-b.kp{color:#6B3AA0}
+.tc-b.lb{color:#1E6B4A}
 .tc-h{font-family:'Fraunces',serif;font-size:1.8rem;font-weight:900;color:var(--ink);line-height:1}
 .tc-s{font-size:11px;color:var(--ink-muted);margin-top:3px}
 
@@ -420,10 +436,54 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
           </div>
         </div>
         <div class="w-cards reveal d1">
-          <div class="w-card"><div class="w-card-ic">🔬</div><div class="w-card-t">Science lab + classroom</div><div class="w-card-b">Full construction at Siyambalangamuwa Junior School — the first lab the school has ever had.</div><span class="w-card-tg">Construction · </span></div>
-          <div class="w-card"><div class="w-card-ic">💧</div><div class="w-card-t">Water tank installation</div><div class="w-card-b">Reliable water access at Atharagalla Junior School with tripod structure.</div><span class="w-card-tg">Installation ·</span></div>
-          <div class="w-card"><div class="w-card-ic">⚡</div><div class="w-card-t">Repairs &amp; improvements</div><div class="w-card-b">Restoring and refreshing classroom facilities — new ceiling fans, fresh paint, and essential repairs to create a more comfortable space for students to learn.</div><span class="w-card-tg">Throughout June</span></div>
-          <div class="w-card"><div class="w-card-ic">🎓</div><div class="w-card-t">Opening ceremony</div><div class="w-card-b">Official inauguration attended by students, faculty, sponsors and community.</div><span class="w-card-tg">29th June 2026</span></div>
+          <div class="w-card">
+            <svg class="w-card-img" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="38" width="70" height="48" rx="3" fill="#1E3D28"/>
+              <rect x="22" y="28" width="46" height="14" rx="2" fill="#1E3D28"/>
+              <rect x="35" y="18" width="20" height="13" rx="2" fill="#1E3D28"/>
+              <rect x="18" y="50" width="14" height="18" rx="1.5" fill="#1E3D28" opacity=".5"/>
+              <rect x="38" y="50" width="14" height="18" rx="1.5" fill="#1E3D28" opacity=".5"/>
+              <rect x="58" y="50" width="14" height="18" rx="1.5" fill="#1E3D28" opacity=".5"/>
+              <rect x="28" y="68" width="34" height="18" rx="1.5" fill="#1E3D28" opacity=".6"/>
+              <circle cx="75" cy="18" r="11" fill="#B8882A" opacity=".5"/>
+              <path d="M70 18 L74 22 L81 13" stroke="#B8882A" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <div class="w-card-ic">🔬</div><div class="w-card-t">Science lab + classroom</div><div class="w-card-b">Full construction at Siyambalangamuwa Junior School — the first lab the school has ever had.</div><span class="w-card-tg">Construction · </span>
+          </div>
+          <div class="w-card">
+            <svg class="w-card-img" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <ellipse cx="45" cy="28" rx="28" ry="22" fill="#1E3D28" opacity=".5"/>
+              <rect x="38" y="48" width="14" height="35" rx="3" fill="#1E3D28" opacity=".6"/>
+              <ellipse cx="45" cy="28" rx="18" ry="13" fill="#1E3D28" opacity=".3"/>
+              <path d="M20 52 Q45 42 70 52" stroke="#1E3D28" stroke-width="3" stroke-linecap="round" opacity=".4"/>
+              <path d="M28 62 Q45 54 62 62" stroke="#1E3D28" stroke-width="2.5" stroke-linecap="round" opacity=".3"/>
+              <circle cx="45" cy="75" r="8" fill="#1E3D28" opacity=".2"/>
+            </svg>
+            <div class="w-card-ic">💧</div><div class="w-card-t">Water tank installation</div><div class="w-card-b">Reliable water access at Atharagalla Junior School with tripod structure.</div><span class="w-card-tg">Installation ·</span>
+          </div>
+          <div class="w-card">
+            <svg class="w-card-img" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect x="10" y="30" width="70" height="50" rx="3" fill="#1E3D28" opacity=".4"/>
+              <rect x="18" y="20" width="54" height="14" rx="2" fill="#1E3D28" opacity=".3"/>
+              <path d="M8 30 L45 10 L82 30" fill="#1E3D28" opacity=".35"/>
+              <line x1="25" y1="80" x2="25" y2="42" stroke="#1E3D28" stroke-width="1.5" opacity=".3"/>
+              <line x1="45" y1="80" x2="45" y2="42" stroke="#1E3D28" stroke-width="1.5" opacity=".3"/>
+              <line x1="65" y1="80" x2="65" y2="42" stroke="#1E3D28" stroke-width="1.5" opacity=".3"/>
+              <path d="M62 22 Q72 14 78 22" stroke="#B8882A" stroke-width="2" stroke-linecap="round" opacity=".5" fill="none"/>
+              <circle cx="70" cy="14" r="5" fill="#B8882A" opacity=".4"/>
+            </svg>
+            <div class="w-card-ic">⚡</div><div class="w-card-t">Repairs &amp; improvements</div><div class="w-card-b">Restoring and refreshing classroom facilities — new ceiling fans, fresh paint, and essential repairs to create a more comfortable space for students to learn.</div><span class="w-card-tg">Throughout June</span>
+          </div>
+          <div class="w-card">
+            <svg class="w-card-img" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M45 12 L52 32 L74 32 L57 45 L64 65 L45 53 L26 65 L33 45 L16 32 L38 32 Z" fill="#B8882A" opacity=".35"/>
+              <circle cx="45" cy="70" r="14" fill="#1E3D28" opacity=".2"/>
+              <rect x="30" y="75" width="30" height="6" rx="3" fill="#1E3D28" opacity=".25"/>
+              <circle cx="68" cy="20" r="8" fill="#B8882A" opacity=".25"/>
+              <circle cx="22" cy="22" r="6" fill="#1E3D28" opacity=".2"/>
+            </svg>
+            <div class="w-card-ic">🎓</div><div class="w-card-t">Opening ceremony</div><div class="w-card-b">Official inauguration attended by students, faculty, sponsors and community.</div><span class="w-card-tg">29th June 2026</span>
+          </div>
         </div>
       </div>
       <div class="reveal" style="margin-top:4rem">
@@ -449,9 +509,40 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
     <div class="wrap">
       <div class="reveal"><p class="lbl">Get Involved</p><h2 class="ttl">Choose how you want to <em>make an impact.</em></h2></div>
       <div class="hcc-row reveal d1">
-        <div class="hcc c1" onclick="go('company')"><div class="hcc-lbl">For businesses</div><div class="hcc-t">Company Sponsorships</div><div class="hcc-b">Partner at LKR 75,000–300,000+. Logo on our website, weekly social features, permanent recognition, and access to our 50+ volunteer network for your CSR needs.</div><div class="hcc-arr">→</div><div class="hcc-bg">₨</div></div>
-        <div class="hcc c2" onclick="go('individual')"><div class="hcc-lbl">For individuals</div><div class="hcc-t">Personal Donations</div><div class="hcc-b">Supporter to Visionary — five tiers from LKR 0 to 100,000+. Every rupee goes to the build. Receive a digital receipt instantly.</div><div class="hcc-arr">→</div><div class="hcc-bg">❤</div></div>
-        <div class="hcc c3" onclick="go('why')"><div class="hcc-lbl">For decision makers</div><div class="hcc-t">Why Partner With Us</div><div class="hcc-b">Understand why Lumora 2 is smarter than running CSR independently — and what you get that you simply can't build yourself.</div><div class="hcc-arr">→</div><div class="hcc-bg">★</div></div>
+        <div class="hcc c1" onclick="go('company')">
+          <svg class="hcc-img" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="80" width="120" height="70" rx="5" fill="white"/>
+            <rect x="38" y="60" width="84" height="25" rx="4" fill="white"/>
+            <rect x="60" y="40" width="40" height="24" rx="3" fill="white"/>
+            <rect x="28" y="98" width="22" height="32" rx="2" fill="white" opacity=".5"/>
+            <rect x="69" y="98" width="22" height="32" rx="2" fill="white" opacity=".5"/>
+            <rect x="110" y="98" width="22" height="32" rx="2" fill="white" opacity=".5"/>
+            <circle cx="130" cy="38" r="22" fill="white" opacity=".2"/>
+            <path d="M121 38 L129 46 L141 28" stroke="white" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="hcc-lbl">For businesses</div><div class="hcc-t">Company Sponsorships</div><div class="hcc-b">Partner at LKR 75,000–300,000+. Logo on our website, weekly social features, permanent recognition, and access to our 50+ volunteer network for your CSR needs.</div><div class="hcc-arr">→</div><div class="hcc-bg">₨</div>
+        </div>
+        <div class="hcc c2" onclick="go('individual')">
+          <svg class="hcc-img" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80 130 C80 130 20 95 20 55 C20 35 38 20 58 25 C68 28 76 35 80 42 C84 35 92 28 102 25 C122 20 140 35 140 55 C140 95 80 130 80 130Z" fill="#8B5E1A" opacity=".5"/>
+            <circle cx="80" cy="55" r="18" fill="#8B5E1A" opacity=".3"/>
+            <path d="M70 55 L78 63 L93 43" stroke="#8B5E1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="130" cy="120" r="20" fill="#8B5E1A" opacity=".15"/>
+            <circle cx="30" cy="115" r="14" fill="#8B5E1A" opacity=".12"/>
+          </svg>
+          <div class="hcc-lbl">For individuals</div><div class="hcc-t">Personal Donations</div><div class="hcc-b">Supporter to Visionary — five tiers from LKR 0 to 100,000+. Every rupee goes to the build. Receive a digital receipt instantly.</div><div class="hcc-arr">→</div><div class="hcc-bg">❤</div>
+        </div>
+        <div class="hcc c3" onclick="go('why')">
+          <svg class="hcc-img" viewBox="0 0 160 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M80 20 L92 56 L130 56 L100 78 L112 114 L80 92 L48 114 L60 78 L30 56 L68 56 Z" fill="white" opacity=".3"/>
+            <circle cx="80" cy="80" r="35" stroke="white" stroke-width="2" opacity=".2"/>
+            <circle cx="80" cy="80" r="22" stroke="white" stroke-width="1.5" opacity=".15"/>
+            <circle cx="128" cy="32" r="16" fill="white" opacity=".1"/>
+            <circle cx="32" cy="128" r="12" fill="white" opacity=".08"/>
+            <path d="M72 80 L78 86 L90 70" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+          </svg>
+          <div class="hcc-lbl">For decision makers</div><div class="hcc-t">Why Partner With Us</div><div class="hcc-b">Understand why Lumora 2 is smarter than running CSR independently — and what you get that you simply can't build yourself.</div><div class="hcc-arr">→</div><div class="hcc-bg">★</div>
+        </div>
       </div>
     </div>
   </section>
@@ -500,12 +591,94 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
     <div class="wrap">
       <div class="reveal"><p class="lbl">What You Actually Get</p><h2 class="ttl">Six reasons this is the <em>smartest</em> CSR move this year.</h2></div>
       <div class="pl-g reveal d1">
-        <div class="pl p1"><div class="pl-bg">01</div><div class="pl-ic">🏛️</div><div class="pl-t">Permanent, verified impact</div><div class="pl-b">A science lab with your name on it. A water tank serving children daily. Physical proof that exists for decades — not a one-day event.</div><div class="pl-hl" style="color:var(--gold-pale)">Lasts long after the cheque clears.</div></div>
-        <div class="pl p2"><div class="pl-bg">02</div><div class="pl-ic">🎬</div><div class="pl-t">Ready-made CSR content</div><div class="pl-b">Professional recap video and photography delivered to you. Use in annual reports, LinkedIn, investor decks, and media pitches. Content your team didn't have to produce.</div><div class="pl-hl">Your CSR story, told beautifully.</div></div>
-        <div class="pl p3"><div class="pl-bg">03</div><div class="pl-ic">🌐</div><div class="pl-t">Continuous digital reach</div><div class="pl-b">One social media post per week leading up to the event, logo on our website, and influencer amplification throughout June. Not just one day.</div><div class="pl-hl" style="color:var(--gold-pale)">All of June. Every week.</div></div>
-        <div class="pl p4"><div class="pl-bg">04</div><div class="pl-ic">🎓</div><div class="pl-t">Youth brand association</div><div class="pl-b">A university-led initiative signals that your brand values young talent. Powerful for employer branding and graduate recruitment.</div><div class="pl-hl">Be the company graduates want to join.</div></div>
-        <div class="pl p5"><div class="pl-bg">05</div><div class="pl-ic">👥</div><div class="pl-t">50+ volunteer network</div><div class="pl-b">Surveys, community outreach, awareness drives — our 50+ motivated university volunteers support your CSR goals. A resource agencies charge for.</div><div class="pl-hl" style="color:var(--gold-pale)">Available to all sponsors.</div></div>
-        <div class="pl p6"><div class="pl-bg">06</div><div class="pl-ic">⚡</div><div class="pl-t">Zero execution burden</div><div class="pl-b">Project already running. You contribute — we plan, execute, document and report. Attend the ceremony, receive everything. Simple.</div><div class="pl-hl">The easiest CSR decision you'll make.</div></div>
+        <div class="pl p1">
+          <div class="pl-bg">01</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="20" y="60" width="100" height="70" rx="4" fill="white"/>
+            <rect x="35" y="45" width="70" height="20" rx="3" fill="white"/>
+            <rect x="55" y="30" width="30" height="18" rx="2" fill="white"/>
+            <rect x="30" y="75" width="18" height="25" rx="2" fill="white" opacity=".5"/>
+            <rect x="61" y="75" width="18" height="25" rx="2" fill="white" opacity=".5"/>
+            <rect x="92" y="75" width="18" height="25" rx="2" fill="white" opacity=".5"/>
+            <rect x="45" y="100" width="50" height="30" rx="2" fill="white" opacity=".6"/>
+            <circle cx="110" cy="30" r="18" fill="white" opacity=".3"/>
+            <path d="M103 30 L110 37 L120 24" stroke="white" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="pl-ic">🏛️</div><div class="pl-t">Permanent, verified impact</div><div class="pl-b">A science lab with your name on it. A water tank serving children daily. Physical proof that exists for decades — not a one-day event.</div><div class="pl-hl" style="color:var(--gold-pale)">Lasts long after the cheque clears.</div>
+        </div>
+        <div class="pl p2">
+          <div class="pl-bg">02</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect x="15" y="30" width="90" height="65" rx="6" fill="#8B5E1A" opacity=".6"/>
+            <rect x="22" y="38" width="76" height="50" rx="3" fill="#3A2800" opacity=".4"/>
+            <circle cx="60" cy="63" r="16" fill="#8B5E1A" opacity=".5"/>
+            <path d="M50 63 L58 71 L73 53" stroke="#8B5E1A" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M105 55 Q120 40 125 65 Q120 90 105 80 Q95 72 105 55Z" fill="#8B5E1A" opacity=".35"/>
+            <rect x="30" y="100" width="25" height="8" rx="4" fill="#8B5E1A" opacity=".4"/>
+            <rect x="62" y="100" width="45" height="8" rx="4" fill="#8B5E1A" opacity=".25"/>
+            <circle cx="110" cy="110" r="22" fill="#8B5E1A" opacity=".15"/>
+          </svg>
+          <div class="pl-ic">🎬</div><div class="pl-t">Ready-made CSR content</div><div class="pl-b">Professional recap video and photography delivered to you. Use in annual reports, LinkedIn, investor decks, and media pitches. Content your team didn't have to produce.</div><div class="pl-hl">Your CSR story, told beautifully.</div>
+        </div>
+        <div class="pl p3">
+          <div class="pl-bg">03</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="70" cy="70" r="40" stroke="white" stroke-width="2" opacity=".4"/>
+            <circle cx="70" cy="70" r="28" stroke="white" stroke-width="1.5" opacity=".3"/>
+            <circle cx="70" cy="70" r="16" fill="white" opacity=".2"/>
+            <circle cx="70" cy="30" r="6" fill="white" opacity=".6"/>
+            <circle cx="104" cy="52" r="5" fill="white" opacity=".5"/>
+            <circle cx="104" cy="88" r="5" fill="white" opacity=".5"/>
+            <circle cx="70" cy="110" r="6" fill="white" opacity=".6"/>
+            <circle cx="36" cy="88" r="5" fill="white" opacity=".5"/>
+            <circle cx="36" cy="52" r="5" fill="white" opacity=".5"/>
+            <line x1="70" y1="36" x2="70" y2="54" stroke="white" stroke-width="1.5" opacity=".4"/>
+            <line x1="99" y1="55" x2="86" y2="63" stroke="white" stroke-width="1.5" opacity=".4"/>
+            <line x1="99" y1="85" x2="86" y2="77" stroke="white" stroke-width="1.5" opacity=".4"/>
+            <line x1="70" y1="104" x2="70" y2="86" stroke="white" stroke-width="1.5" opacity=".4"/>
+            <line x1="41" y1="85" x2="54" y2="77" stroke="white" stroke-width="1.5" opacity=".4"/>
+            <line x1="41" y1="55" x2="54" y2="63" stroke="white" stroke-width="1.5" opacity=".4"/>
+          </svg>
+          <div class="pl-ic">🌐</div><div class="pl-t">Continuous digital reach</div><div class="pl-b">One social media post per week leading up to the event, logo on our website, and influencer amplification throughout June. Not just one day.</div><div class="pl-hl" style="color:var(--gold-pale)">All of June. Every week.</div>
+        </div>
+        <div class="pl p4">
+          <div class="pl-bg">04</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="70" cy="45" r="22" fill="#1E3D28" opacity=".25"/>
+            <path d="M48 90 Q48 68 70 68 Q92 68 92 90 L92 105 L48 105 Z" fill="#1E3D28" opacity=".2"/>
+            <rect x="30" y="108" width="80" height="6" rx="3" fill="#1E3D28" opacity=".15"/>
+            <path d="M95 50 L115 35 M115 35 L108 35 M115 35 L115 42" stroke="#1E3D28" stroke-width="2" opacity=".3" stroke-linecap="round"/>
+            <circle cx="110" cy="90" r="14" fill="#1E3D28" opacity=".12"/>
+            <path d="M103 90 L108 95 L118 83" stroke="#1E3D28" stroke-width="2.5" opacity=".35" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <div class="pl-ic">🎓</div><div class="pl-t">Youth brand association</div><div class="pl-b">A university-led initiative signals that your brand values young talent. Powerful for employer branding and graduate recruitment.</div><div class="pl-hl">Be the company graduates want to join.</div>
+        </div>
+        <div class="pl p5">
+          <div class="pl-bg">05</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="50" cy="45" r="16" fill="white" opacity=".3"/>
+            <circle cx="90" cy="45" r="16" fill="white" opacity=".3"/>
+            <circle cx="70" cy="35" r="14" fill="white" opacity=".4"/>
+            <path d="M34 95 Q34 72 50 72 Q66 72 66 95" fill="white" opacity=".2"/>
+            <path d="M74 95 Q74 72 90 72 Q106 72 106 95" fill="white" opacity=".2"/>
+            <path d="M42 95 Q42 68 70 68 Q98 68 98 95 L98 112 L42 112 Z" fill="white" opacity=".15"/>
+            <rect x="30" y="112" width="80" height="5" rx="2.5" fill="white" opacity=".15"/>
+          </svg>
+          <div class="pl-ic">👥</div><div class="pl-t">50+ volunteer network</div><div class="pl-b">Surveys, community outreach, awareness drives — our 50+ motivated university volunteers support your CSR goals. A resource agencies charge for.</div><div class="pl-hl" style="color:var(--gold-pale)">Available to all sponsors.</div>
+        </div>
+        <div class="pl p6">
+          <div class="pl-bg">06</div>
+          <svg class="pl-img" viewBox="0 0 140 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M30 70 L55 45 L80 65 L110 30" stroke="#1E3D28" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" opacity=".3"/>
+            <circle cx="110" cy="30" r="8" fill="#1E3D28" opacity=".25"/>
+            <path d="M102 30 L110 38 L120 20" stroke="#1E3D28" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" opacity=".5"/>
+            <rect x="25" y="95" width="20" height="30" rx="3" fill="#1E3D28" opacity=".12"/>
+            <rect x="55" y="80" width="20" height="45" rx="3" fill="#1E3D28" opacity=".15"/>
+            <rect x="85" y="65" width="20" height="60" rx="3" fill="#1E3D28" opacity=".18"/>
+            <path d="M25 92 L35 92 M55 77 L65 77 M85 62 L95 62" stroke="#B8882A" stroke-width="2" opacity=".35" stroke-linecap="round"/>
+          </svg>
+          <div class="pl-ic">⚡</div><div class="pl-t">Zero execution burden</div><div class="pl-b">Project already running. You contribute — we plan, execute, document and report. Attend the ceremony, receive everything. Simple.</div><div class="pl-hl">The easiest CSR decision you'll make.</div>
+        </div>
       </div>
     </div>
   </section>
@@ -554,18 +727,25 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="tc">
           <div class="tc-top"><div class="tc-b">Platinum</div><div class="tc-h">300,000</div><div class="tc-s">LKR &amp; above</div></div>
           <div class="tc-body">
-            <div class="tc-sl">Permanent legacy</div>
-            <div class="tc-pk"><span class="tc-d"></span>Naming rights on science lab (permanent plaque)</div>
-            <div class="tc-pk"><span class="tc-d"></span>"Built by [Sponsor]" lab dedication board</div>
+            <div class="tc-sl">Naming &amp; permanent legacy</div>
+            <div class="tc-hl">🏛️ Event credited as "Lumora 2 powered by [Company Name]"</div>
+            <div class="tc-hl">🪧 Science lab permanently titled "Built by [Company Name]" on dedication plaque</div>
             <div class="tc-sl">On the day</div>
-            <div class="tc-pk"><span class="tc-d"></span>VIP seats + dedicated speech slot at ceremony</div>
-            <div class="tc-pk"><span class="tc-d"></span>Logo on all event banners &amp; backdrops</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated 5–6 minute speech slot at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional video slot (up to 3–5 minutes) during the ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Special appreciation plaque at closing ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>VIP seat at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional material distribution to attendees</div>
+            <div class="tc-sl">Visibility</div>
+            <div class="tc-pk"><span class="tc-d"></span>Exclusive logo on all backdrops, banners, flyers &amp; digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Headline visibility across all social media campaigns (Facebook, Instagram, LinkedIn, WhatsApp)</div>
             <div class="tc-sl">Digital &amp; media</div>
-            <div class="tc-hl">🌐 Homepage + sponsor page placement</div>
-            <div class="tc-pk"><span class="tc-d"></span>Opening title card in recap video</div>
-            <div class="tc-pk"><span class="tc-d"></span>Dedicated 15–30 sec video segment</div>
-            <div class="tc-pk"><span class="tc-d"></span>Raw footage &amp; photos for own CSR use</div>
-            <div class="tc-hl">📅 Weekly post featuring your brand specifically</div>
+            <div class="tc-hl">🌐 Logo on homepage + sponsor page of Lumora 2 website</div>
+            <div class="tc-hl">📅 1–2 promotional posts per week leading up to event</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated post about your company on social media</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured in post-event recap video</div>
+            <div class="tc-pk"><span class="tc-d"></span>Raw footage &amp; photos delivered for own CSR use</div>
+            <div class="tc-pk"><span class="tc-d"></span>Access to 50+ volunteer network for CSR activities</div>
           </div>
           <button class="tc-btn" onclick="chooseTier(this,'Platinum — LKR 300,000+')">Become Platinum Partner</button>
         </div>
@@ -573,15 +753,22 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
           <div class="tc-top"><div class="tc-b go">Gold</div><div class="tc-h">200,000</div><div class="tc-s">LKR &amp; above</div></div>
           <div class="tc-body">
             <div class="tc-sl">Permanent legacy</div>
-            <div class="tc-pk"><span class="tc-d"></span>Name on permanent lab plaque</div>
+            <div class="tc-hl">🪧 Name prominently featured on permanent science lab dedication plaque</div>
             <div class="tc-sl">On the day</div>
-            <div class="tc-pk"><span class="tc-d"></span>VIP seats at opening ceremony</div>
-            <div class="tc-pk"><span class="tc-d"></span>Logo on main event banner</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated 3–4 minute speech slot at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional video slot (up to 2 minutes) during the ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>VIP seat at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional material distribution to attendees</div>
+            <div class="tc-sl">Visibility</div>
+            <div class="tc-pk"><span class="tc-d"></span>Prominent logo on all event backdrops, banners &amp; digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Strong visibility across all social media campaigns</div>
             <div class="tc-sl">Digital &amp; media</div>
-            <div class="tc-hl">🌐 Sponsor page logo placement</div>
-            <div class="tc-pk"><span class="tc-d"></span>Prominent logo card in recap video</div>
-            <div class="tc-pk"><span class="tc-d"></span>Selected photos for own use</div>
-            <div class="tc-hl">📅 Weekly post featuring your brand</div>
+            <div class="tc-hl">🌐 Logo on sponsor page of Lumora 2 website</div>
+            <div class="tc-hl">📅 1–2 promotional posts per week leading up to event</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated post about your company on social media</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured in post-event recap video</div>
+            <div class="tc-pk"><span class="tc-d"></span>Selected photos delivered for own use</div>
+            <div class="tc-pk"><span class="tc-d"></span>Access to 50+ volunteer network for CSR activities</div>
           </div>
           <button class="tc-btn" onclick="chooseTier(this,'Gold — LKR 200,000+')">Become Gold Partner</button>
         </div>
@@ -589,13 +776,20 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
           <div class="tc-top"><div class="tc-b si">Silver</div><div class="tc-h">150,000</div><div class="tc-s">LKR &amp; above</div></div>
           <div class="tc-body">
             <div class="tc-sl">Permanent legacy</div>
-            <div class="tc-pk"><span class="tc-d"></span>Name on school acknowledgement board</div>
+            <div class="tc-hl">🪧 Name listed on permanent science lab dedication plaque</div>
             <div class="tc-sl">On the day</div>
-            <div class="tc-pk"><span class="tc-d"></span>Logo on event banner</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated 2-minute speech slot at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Seat at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional material distribution to attendees</div>
+            <div class="tc-sl">Visibility</div>
+            <div class="tc-pk"><span class="tc-d"></span>Logo on event banners and digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Social media recognition across all campaigns</div>
             <div class="tc-sl">Digital &amp; media</div>
-            <div class="tc-hl">🌐 Sponsor page logo placement</div>
-            <div class="tc-pk"><span class="tc-d"></span>Logo in video end credits</div>
-            <div class="tc-hl">📅 Weekly post featuring your brand</div>
+            <div class="tc-hl">🌐 Logo on sponsor page of Lumora 2 website</div>
+            <div class="tc-hl">📅 1 promotional post per week leading up to event</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated post about your company on social media</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured in post-event recap video</div>
+            <div class="tc-pk"><span class="tc-d"></span>Access to 50+ volunteer network for CSR activities</div>
           </div>
           <button class="tc-btn" onclick="chooseTier(this,'Silver — LKR 150,000+')">Become Silver Partner</button>
         </div>
@@ -603,14 +797,102 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
           <div class="tc-top"><div class="tc-b br">Bronze</div><div class="tc-h">75,000</div><div class="tc-s">LKR &amp; above</div></div>
           <div class="tc-body">
             <div class="tc-sl">Permanent legacy</div>
-            <div class="tc-pk"><span class="tc-d"></span>Name on school acknowledgement board</div>
+            <div class="tc-pk"><span class="tc-d"></span>Name listed on official Lumora 2 sponsors list displayed at event</div>
+            <div class="tc-sl">On the day</div>
+            <div class="tc-pk"><span class="tc-d"></span>Brief speaking opportunity at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Seat at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Promotional material distribution to attendees</div>
+            <div class="tc-sl">Visibility</div>
+            <div class="tc-pk"><span class="tc-d"></span>Logo on selected event banners and digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Social media mention across campaigns</div>
             <div class="tc-sl">Digital &amp; media</div>
-            <div class="tc-hl">🌐 Sponsor page logo placement</div>
-            <div class="tc-pk"><span class="tc-d"></span>Name in video end credits</div>
-            <div class="tc-hl">📅 Weekly post featuring your brand</div>
+            <div class="tc-hl">🌐 Logo on sponsor page of Lumora 2 website</div>
+            <div class="tc-hl">📅 1 promotional post per week leading up to event</div>
+            <div class="tc-pk"><span class="tc-d"></span>Dedicated post about your company on social media</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured in post-event recap video</div>
+            <div class="tc-pk"><span class="tc-d"></span>Access to 50+ volunteer network for CSR activities</div>
           </div>
           <button class="tc-btn" onclick="chooseTier(this,'Bronze — LKR 75,000+')">Become Bronze Partner</button>
         </div>
+      </div>
+
+      <!-- Official Partnership Tiers -->
+      <div class="reveal" style="margin-top:3.5rem">
+        <p class="lbl">Official Partnerships</p>
+        <h2 class="ttl" style="font-size:clamp(1.5rem,3vw,2.2rem)">Specialist roles for <em>targeted impact.</em></h2>
+        <p class="bod" style="margin-bottom:2rem;max-width:600px">Beyond financial sponsorship — these partnerships let your brand contribute a specific kind of expertise or resource directly to the project.</p>
+      </div>
+      <div class="tg reveal d1" style="grid-template-columns:repeat(3,1fr)">
+
+        <!-- Official Side Partner -->
+        <div class="tc">
+          <div class="tc-top">
+            <div class="tc-b sp">Official Side Partner</div>
+            <div class="tc-h" style="font-size:1.2rem;line-height:1.2">Side Partner</div>
+            <div class="tc-s">Recognized partnership role</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-sl">Recognition</div>
+            <div class="tc-hl">🏷️ Credited as "Official Side Partner of Lumora 2"</div>
+            <div class="tc-sl">On the day</div>
+            <div class="tc-pk"><span class="tc-d"></span>Acknowledgment during event proceedings</div>
+            <div class="tc-pk"><span class="tc-d"></span>Seat at opening ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>Opportunity to distribute promotional materials</div>
+            <div class="tc-sl">Digital &amp; media</div>
+            <div class="tc-hl">🌐 Logo on event banners &amp; digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Social media mentions across campaign period</div>
+            <div class="tc-pk"><span class="tc-d"></span>Logo on Lumora 2 sponsor page</div>
+          </div>
+          <button class="tc-btn" onclick="chooseTier(this,'Official Side Partner')">Become Side Partner</button>
+        </div>
+
+        <!-- Official Knowledge Partner -->
+        <div class="tc">
+          <div class="tc-top">
+            <div class="tc-b kp">Official Knowledge Partner</div>
+            <div class="tc-h" style="font-size:1.2rem;line-height:1.2">Knowledge Partner</div>
+            <div class="tc-s">Education-focused role</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-sl">Recognition</div>
+            <div class="tc-hl">🎓 Credited as "Official Knowledge Partner of Lumora 2"</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured as key contributor to educational impact</div>
+            <div class="tc-sl">Engagement</div>
+            <div class="tc-pk"><span class="tc-d"></span>Conduct workshops, training or awareness programs</div>
+            <div class="tc-pk"><span class="tc-d"></span>Speaking slot during event or workshop sessions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Access to volunteer &amp; student network for future collaborations</div>
+            <div class="tc-sl">Digital &amp; media</div>
+            <div class="tc-hl">🌐 Logo on event banners &amp; digital promotions</div>
+            <div class="tc-hl">📅 Dedicated posts highlighting your expertise</div>
+            <div class="tc-pk"><span class="tc-d"></span>Logo on Lumora 2 sponsor page</div>
+            <div class="tc-pk"><span class="tc-d"></span>Seat at opening ceremony</div>
+          </div>
+          <button class="tc-btn" onclick="chooseTier(this,'Official Knowledge Partner')">Become Knowledge Partner</button>
+        </div>
+
+        <!-- Official Science Lab Partner -->
+        <div class="tc">
+          <div class="tc-top">
+            <div class="tc-b lb">Official Science Lab Partner</div>
+            <div class="tc-h" style="font-size:1.2rem;line-height:1.2">Science Lab Partner</div>
+            <div class="tc-s">Laboratory equipment support</div>
+          </div>
+          <div class="tc-body">
+            <div class="tc-sl">Recognition</div>
+            <div class="tc-hl">🔬 Recognized as "Official Science Lab Partner of LUMORA 2"</div>
+            <div class="tc-pk"><span class="tc-d"></span>Direct contribution to equipping the permanent science laboratory</div>
+            <div class="tc-sl">On the day</div>
+            <div class="tc-hl">🏛️ Invitation to lab opening / handover ceremony</div>
+            <div class="tc-pk"><span class="tc-d"></span>VIP seat at opening ceremony</div>
+            <div class="tc-sl">Digital &amp; media</div>
+            <div class="tc-hl">🌐 Logo on event banners &amp; digital promotions</div>
+            <div class="tc-pk"><span class="tc-d"></span>Strong CSR-focused social media visibility</div>
+            <div class="tc-pk"><span class="tc-d"></span>Featured in post-event recap video</div>
+            <div class="tc-pk"><span class="tc-d"></span>Logo on sponsor page of LUMORA 2 website</div>
+          </div>
+          <button class="tc-btn" onclick="chooseTier(this,'Official Science Lab Partner')">Become Lab Partner</button>
+        </div>
+
       </div>
     </div>
   </section>
@@ -631,6 +913,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
               <option>Gold — LKR 200,000+</option>
               <option>Silver — LKR 150,000+</option>
               <option>Bronze — LKR 75,000+</option>
+              <option>Official Side Partner</option>
+              <option>Official Knowledge Partner</option>
+              <option>Official Science Lab Partner</option>
               <option>I'd like to discuss options</option>
             </select>
           </div>
@@ -638,7 +923,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         </div>
         </div>
         <button class="fsub" onclick="submitCS()" id="cs-btn">Send Sponsorship Enquiry →</button>
-        <p class="fnote" id="cs-note">Submitting this form sends your enquiry directly to lumorabyieeepes@gmail.com. We'll respond within 24 hours.</p>
+        <p class="fnote" id="cs-note">Submitting this form sends your enquiry directly to pessliit@gmail.com. We'll respond within 24 hours.</p>
         <div id="cs-ty" style="display:none;text-align:center;padding:1.5rem 0">
           <div style="font-size:2.5rem;margin-bottom:10px">🎉</div>
           <div style="font-family:'Fraunces',serif;font-size:1.4rem;font-weight:900;color:var(--forest);margin-bottom:8px">Enquiry Sent!</div>
@@ -890,7 +1175,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
         <div class="reveal">
           <p class="lbl">Direct Contact</p>
           <h2 class="ttl" style="font-size:2rem;margin-bottom:1.5rem">Reach us <em>directly.</em></h2>
-          <div class="ci-card"><div class="ci-ic">📧</div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:lumorabyieeepes@gmail.com">lumorabyieeepes@gmail.com</a></div></div>
+          <div class="ci-card"><div class="ci-ic">📧</div><div class="ci-lbl">Email</div><div class="ci-val"><a href="mailto:pessliit@gmail.com">pessliit@gmail.com</a></div></div>
           <div class="ci-card"><div class="ci-ic">📍</div><div class="ci-lbl">Event Location</div><div class="ci-val">Mahawa Educational Zone, Sri Lanka</div></div>
 
           <div style="margin-top:1.5rem">
@@ -1044,7 +1329,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
             <div style="font-size:12px;color:var(--ink-muted);line-height:1.8">
               <div style="margin-bottom:6px">IEEE PES Student Branch Chapter</div>
               <div style="margin-bottom:6px">Sri Lanka Institute of Information Technology</div>
-              <div style="color:var(--forest);font-weight:600">lumorabyieeepes@gmail.com</div>
+              <div style="color:var(--forest);font-weight:600">pessliit@gmail.com</div>
             </div>
           </div>
         </div>
@@ -1088,14 +1373,14 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
       </div>
       <div>
         <div class="foot-ct">Contact</div>
-        <div class="foot-lk" style="cursor:default">lumorabyieeepes@gmail.com</div>
+        <div class="foot-lk" style="cursor:default">pessliit@gmail.com</div>
         <div class="foot-lk" style="cursor:default">+94 70 641 3758</div>
         <div class="foot-lk" style="cursor:default">+94 71 459 1657</div>
       </div>
     </div>
     <div class="foot-bot">
       <div class="foot-cp">© 2026 Lumora 2 · IEEE PES Student Branch Chapter of SLIIT</div>
-      <div class="foot-cp">PES @ SLIIT · lumorabyieeepes@gmail.com</div>
+      <div class="foot-cp">PES @ SLIIT · pessliit@gmail.com</div>
     </div>
   </div>
 </footer>
@@ -1125,7 +1410,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:200;padding:0 3rem;height:64px;d
   <div class="em-box">
     <div class="em-h"><div class="em-ic">📨</div><div class="em-t">Enquiry Sent!</div><div class="em-s">We'll be in touch within 24 hours</div></div>
     <div class="em-body">
-      <p class="em-txt">Thank you, <strong id="em-n"></strong>! Your <strong id="em-pkg"></strong> sponsorship enquiry has been sent to the Lumora 2 team at <strong>lumorabyieeepes@gmail.com</strong>.<br><br>We'll reach out to <strong id="em-e"></strong> shortly to discuss next steps.</p>
+      <p class="em-txt">Thank you, <strong id="em-n"></strong>! Your <strong id="em-pkg"></strong> sponsorship enquiry has been sent to the Lumora 2 team at <strong>pessliit@gmail.com</strong>.<br><br>We'll reach out to <strong id="em-e"></strong> shortly to discuss next steps.</p>
       <button class="rcls" onclick="closeEM()">Got it</button>
     </div>
   </div>
@@ -1257,7 +1542,7 @@ async function submitDonation(){
       showThanks('d', ref);
     } else {
       btn.textContent='Submit Donation Interest →';btn.disabled=false;
-      alert('Something went wrong. Please try again or contact lumorabyieeepes@gmail.com');
+      alert('Something went wrong. Please try again or contact pessliit@gmail.com');
     }
   }catch(e){
     showThanks('d', ref);
@@ -1297,7 +1582,7 @@ async function submitCS(){
       showThanks('cs', null);
     } else {
       btn.textContent='Send Sponsorship Enquiry →';btn.disabled=false;
-      alert('Something went wrong. Please try again or email lumorabyieeepes@gmail.com');
+      alert('Something went wrong. Please try again or email pessliit@gmail.com');
     }
   }catch(e){
     showThanks('cs', null);
